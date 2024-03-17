@@ -11,6 +11,7 @@ char* capturarArchivo(char* nombre){
     for(int contador = 0; contador < longitud; contador++){
         contenido[contador] = archivo.get();
     }
+    contenido[longitud] = '\0';
     archivo.close();
     return contenido;
 }
