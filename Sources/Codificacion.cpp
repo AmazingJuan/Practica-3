@@ -1,5 +1,5 @@
-#include <Codificacion.h>
-#include <Utilidades.h>
+#include "../Headers/Codificacion.h"
+#include "../Headers/Utilidades.h"
 
 string codPrimerMetodo(int semilla, string binario){
     string codificacion = "";

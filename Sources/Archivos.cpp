@@ -1,4 +1,4 @@
-#include <Archivos.h>
+#include "../Headers/Archivos.h"
 
 char* capturarArchivo(char* nombre){
     fstream archivo;

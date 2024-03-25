@@ -1,18 +1,26 @@
-#include <iostream>
-#include <Archivos.h>
-#include <Utilidades.h>
-#include <Decodificacion.h>
-#include <Codificacion.h>
-
-using namespace std;
+#include "./Headers/Utilidades.h"
+#include "./Headers/Decodificacion.h"
+#include "./Headers/Codificacion.h"
+#include "./Headers/Menus.h"
+#include "./Headers/Programas.h"
 
 int main(){
-    string cadena = capturarArchivo("hola.txt");
-    string binario = stringToBin(cadena);
-    string codificado = codPrimerMetodo(2, binario);
-    string decodificado = decPrimerMetodo(2, codificado);
-    string cadenita = binToString(decodificado);
-    escribirArchivo((unsigned long long) cadenita.size(),"hola.dat", cadenita);
+    string entrada = "";
+    int opcion = 0;
+    string *array = nullptr;
+    bool bandera = true;
 
-    cout << binario;
+    while(bandera){
+        array = crearArray("1 2 3", 3);
+        opcion = menuOpcion(obtenerMensaje("bienvenida"), array, 3);
+        if(opcion == 1){
+            criptografia();
+        }
+        else if(opcion == 2){
+            banco();
+        }
+        else{
+            bandera = false;
+        }
+    }
 }

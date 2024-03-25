@@ -1,5 +1,4 @@
-#include <Decodificacion.h>
-
+#include "../Headers/Decodificacion.h"
 
 string decPrimerMetodo(int semilla, string binario){
     string decodificacion = "";
