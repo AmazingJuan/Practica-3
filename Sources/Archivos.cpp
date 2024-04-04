@@ -1,23 +1,20 @@
 #include "../Headers/Archivos.h"
+#include <vector>
+#include "locale"
 
-char* capturarArchivo(char* nombre){
-    fstream archivo;
-    int longitud;
-    archivo.open(nombre, ios_base::in | ios_base::binary);
-    archivo.seekp(0, archivo.end);
-    longitud = archivo.tellp();
-    char* contenido = new char[longitud];
-    archivo.seekp(0);
-    for(int contador = 0; contador < longitud; contador++){
-        contenido[contador] = archivo.get();
-    }
-    contenido[longitud] = '\0';
-    archivo.close();
-    return contenido;
+string capturarArchivo(char* nombre){
+    ifstream archivo;
+    string cadena;
+    archivo.open(nombre, ifstream::binary | ios_base::in);
+    archivo.seekg (0, archivo.end);
+    int longitud = archivo.tellg();
+    archivo.seekg (0, archivo.beg);
+    for(int cont = 0; cont < longitud; cont++) cadena += archivo.get();
+    return cadena;
 }
 void escribirArchivo(unsigned long long longitud, char* nombre, string contenido){
     fstream archivo;
-    archivo.open(nombre, ios_base::out);
+    archivo.open(nombre, ios_base::out | ios_base::binary);
     archivo.write(contenido.c_str(), longitud);
     archivo.close();
 }

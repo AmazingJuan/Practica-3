@@ -28,9 +28,9 @@ string decPrimerMetodo(int semilla, string binario){
 
 string decSegundoMetodo(int semilla, string binario){
     string codificacion = "";
-    char *aux = new char[semilla];
+    char *aux = new char[semilla + 1];
     aux[semilla] = '\0';
-    for(int contador = 0; contador < binario.size(); contador += semilla){
+    for(unsigned long long contador = 0; contador < binario.size(); contador += semilla){
         for(int contador2 = 0; contador2 < semilla; contador2++){
             if(contador2 - 1 == -1){
                 aux[semilla - 1] = binario[contador + contador2];

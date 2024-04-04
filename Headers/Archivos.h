@@ -4,7 +4,7 @@
 
 #include "Importaciones.h"
 
-char* capturarArchivo(char *);
+string capturarArchivo(char *nombre);
 void escribirArchivo(unsigned long long, char*, string);
 
 #endif // ARCHIVOS_H

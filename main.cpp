@@ -3,13 +3,16 @@
 #include "./Headers/Codificacion.h"
 #include "./Headers/Menus.h"
 #include "./Headers/Programas.h"
+#include "./Headers/Archivos.h"
+#include "vector";
+#include <locale>
+#include <codecvt>
 
 int main(){
     string entrada = "";
     int opcion = 0;
     string *array = nullptr;
     bool bandera = true;
-
     while(bandera){
         array = crearArray("1 2 3", 3);
         opcion = menuOpcion(obtenerMensaje("bienvenida"), array, 3);

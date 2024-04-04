@@ -3,6 +3,6 @@
 #include "Importaciones.h"
 
 int menuOpcion(string mensaje, string *opciones, int lenOpcion);
-string menuEntrada();
+string menuEntrada(string mensaje, bool isNumero, int longMin, int longMax, bool isSaldo);
 
 #endif // MENUS_H

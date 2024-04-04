@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
     Sources/Archivos.cpp \
+    Sources/Banco.cpp \
     Sources/Codificacion.cpp \
     Sources/Decodificacion.cpp \
     Sources/Menus.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
 
 HEADERS += \
     Headers/Archivos.h \
+    Headers/Banco.h \
     Headers/Codificacion.h \
     Headers/Decodificacion.h \
     Headers/Importaciones.h \

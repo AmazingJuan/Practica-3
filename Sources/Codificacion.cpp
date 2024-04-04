@@ -7,13 +7,12 @@ string codPrimerMetodo(int semilla, string binario){
     int contadorBloque = 1;
 
     for(int contador = 0; contador < semilla; contador++){
-        if(binario[contador] % 48 == 0) codificacion += 49;
-        else codificacion += 48;
+        codificacion += invertirBit(binario[contador]);
     }
 
     for(unsigned long long contador = semilla; contador < binario.size(); contador+= semilla){
         contarBin(binario.substr(contador - semilla, semilla), contadores);
-        for(int contador2 = contador; contador2 + semilla < contador + 2*semilla; contador2++){
+        for(unsigned long long contador2 = contador; contador2 + semilla < contador + 2*semilla; contador2++){
             if(contadores[0] == contadores[1]){
                 codificacion += invertirBit(binario[contador2]);
             }
@@ -29,9 +28,9 @@ string codPrimerMetodo(int semilla, string binario){
 
 string codSegundoMetodo(int semilla, string binario){
     string codificacion = "";
-    char *aux = new char[semilla];
+    char *aux = new char[semilla + 1];
     aux[semilla] = '\0';
-    for(int contador = 0; contador < binario.size(); contador += semilla){
+    for(unsigned long long contador = 0; contador < binario.size(); contador += semilla){
         for(int contador2 = 0; contador2 < semilla; contador2++){
             aux[(contador2 + 1) % semilla] = binario[contador + contador2];
         }
